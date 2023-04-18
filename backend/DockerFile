@@ -1,0 +1,29 @@
+# imagem base onde vai rodar o sistema
+# Qual versão de qual maquina vou querer utilizar
+# "alpine" = versão resumida = versão mais leve
+FROM node:15.14.0
+
+RUN npm set strict-ssl false
+
+# Diretorio dentro da maquina que quero trabalhar
+WORKDIR /usr/app/backend/
+
+# Copia o package.json e o package-lock.json para
+# dentro da maquina e executa o npm install
+COPY ./ /usr/app/backend/
+RUN npm install
+
+# Copia todos os arquivos para o diretorio principal
+# ( exceto os contidos no .dockerIgnore )
+# COPY ./backend /usr/app/backend/
+
+# Expoe a aplicação na porta 5000
+EXPOSE 5000
+
+# Executa o comando npm start
+CMD ["npm", "run", "dev"]
+
+# COMANDO PARA CRIAR A IMAGEM:
+# "docker build -t <user/image> <onde esta o dockerfile>"
+# COMANDO PARA RODAR A IMAGEM:
+# "docker run -p <porta final>:<porta dentro do container> -d <nome da imagem>"

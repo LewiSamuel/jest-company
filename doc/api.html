@@ -1,0 +1,354 @@
+<!doctype html>
+    <html lang="en">
+      <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="./favicon.null" type="image/x-null">
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    
+        <title>Jest Company - Documentação API</title>
+        <style>
+            .badge{
+                margin-left: 3px;
+            }
+        </style>
+      </head>
+      <body>
+    
+        <section class="container">
+            <div class="row justify-content-md-center">
+                <div class="col col-lg-12 text-center mt-5">
+                    <small>API documentation</small>
+                    <h1>
+                        <b>Jest Company</b>
+                    </h1>
+                </div>
+                
+                <div class="col col-lg-4 text-center mb-5">
+                    <input type="text" class="form-control border-0 border-bottom" id="search" placeholder="Search here...">
+                </div>
+            </div>
+        
+<!-------------------
+
+
+ENTIDADES
+
+
+-->
+<div class="row">
+    <div class="col col-lg-12">
+        <ul class="list-group">
+<li class="list-group-item pb-3 pt-2" id="User">
+    <h4>
+        <b>1. User</b>
+    </h4>
+    <p>
+        Entidade que lista os usuários cadastrados no sistema.
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Attributes</th>
+                <th scope="col">Type</th>
+                <th scope="col">Validations</th>
+            </tr>
+        </thead>
+    <tbody>
+    <tr>
+        <td>Id</td>
+        <td>
+            <kbd>int</kbd>
+            <span class="badge bg-success">Self managed by the system</span>
+        </td>
+        <td>
+            <ul>
+                <li>Unique identifier</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>createdAt</td>
+        <td>
+            <kbd>date</kbd>
+            <span class="badge bg-success">Self managed by the system</span>
+        </td>
+        <td>
+            <ul>
+                <li>Data de criação</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>UpdatedAt</td>
+        <td>
+            <kbd>date</kbd>
+            <span class="badge bg-success">Self managed by the system</span>
+        </td>
+        <td>
+            <ul>
+                <li>Data da ultima atualização</li>
+            </ul>
+        </td>
+    </tr>
+        
+    <tr>
+        <td>Name</td>
+        <td>
+            <kbd>text</kbd><span class="badge bg-danger">Required</span></td>
+        <td>
+            <ul><li>Maior igual a 6 caracteres</li>
+                        <li>Menor igual a 255 caracteres</li></ul>
+        </td>
+    </tr>
+    <tr>
+        <td>Email</td>
+        <td>
+            <kbd>text</kbd><span class="badge bg-danger">Required</span><span class="badge bg-info">Unique</span></td>
+        <td>
+            <ul><li>Maior igual a 6 caracteres</li>
+                        <li>Menor igual a 255 caracteres</li></ul>
+        </td>
+    </tr>
+    <tr>
+        <td>Password</td>
+        <td>
+            <kbd>text</kbd><span class="badge bg-danger">Required</span></td>
+        <td>
+            <ul><li>Maior igual a 6 caracteres</li>
+                        <li>Menor igual a 255 caracteres</li></ul>
+        </td>
+    </tr>
+        </tbody>
+    </table>
+
+
+<div class="row">
+<section class="col col-sm-6">
+    <h5 style="margin-bottom: -3px;">
+        <b>Routes</b>
+    </h5>
+    <small style="color: #939393;">Select to update curl</small>
+    <h6><span class="badge bg-primary">POST</span> /User/save</h6>
+    <h6><span class="badge bg-primary">POST</span> /User/update</h6>
+    <h6><span class="badge bg-primary">POST</span> /User/list</h6>
+    <h6><span class="badge bg-primary">POST</span> /User/list/:id</h6>
+    <h6><span class="badge bg-primary">POST</span> /User/delete</h6>
+</section>
+<section class="col col-sm-6">
+    <h5>
+        <b>Curl Request</b>
+    </h5>
+    <span class="badge bg-light text-dark populateModal" data-entidade="User" data-bs-toggle="modal" data-values="PATH_ROUTE,JWT,Name,Email,Password," data-bs-target="#insertData" style="float: right; margin-top: -30px;">Edit</span>
+
+    <pre><code id="codeCurl">curl --request POST \ 
+--url http://localhost:5000/User/<span style="color: red">&lt;PATH_ROUTE&gt;</span> \ 
+--header 'Authorization: <span style="color: red">&lt;JWT&gt;</span>' \ 
+--header 'Content-Type: multipart/form-data;' \ <br>--form 'Name=<span style="color: red">&lt;Name&gt;</span>' \ <br>--form 'Email=<span style="color: red">&lt;Email&gt;</span>' \ <br>--form 'Password=<span style="color: red">&lt;Password&gt;</span>' \ <br></code></pre>
+</section>
+</div>
+</li><li class="list-group-item pb-3 pt-2" id="Post">
+    <h4>
+        <b>2. Post</b>
+    </h4>
+    <p>
+        Entidade que lista os usuários cadastrados no sistema.
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Attributes</th>
+                <th scope="col">Type</th>
+                <th scope="col">Validations</th>
+            </tr>
+        </thead>
+    <tbody>
+    <tr>
+        <td>Id</td>
+        <td>
+            <kbd>int</kbd>
+            <span class="badge bg-success">Self managed by the system</span>
+        </td>
+        <td>
+            <ul>
+                <li>Unique identifier</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>createdAt</td>
+        <td>
+            <kbd>date</kbd>
+            <span class="badge bg-success">Self managed by the system</span>
+        </td>
+        <td>
+            <ul>
+                <li>Data de criação</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>UpdatedAt</td>
+        <td>
+            <kbd>date</kbd>
+            <span class="badge bg-success">Self managed by the system</span>
+        </td>
+        <td>
+            <ul>
+                <li>Data da ultima atualização</li>
+            </ul>
+        </td>
+    </tr>
+        
+    <tr>
+        <td>Img</td>
+        <td>
+            <kbd>image</kbd></td>
+        <td>
+            <ul><li>Maior igual a 6 caracteres</li>
+                        <li>Menor igual a 255 caracteres</li></ul>
+        </td>
+    </tr>
+    <tr>
+        <td>Description</td>
+        <td>
+            <kbd>text</kbd></td>
+        <td>
+            <ul><li>Maior igual a 6 caracteres</li>
+                        <li>Menor igual a 1000 caracteres</li></ul>
+        </td>
+    </tr>
+    <tr>
+        <td>Author</td>
+        <td>
+            <kbd>id:User</kbd><span class="badge bg-danger">Required</span></td>
+        <td>
+            <ul><li><b>id</b> válido de algum <kbd>User</kbd></li></ul>
+        </td>
+    </tr>
+        </tbody>
+    </table>
+
+
+<div class="row">
+<section class="col col-sm-6">
+    <h5 style="margin-bottom: -3px;">
+        <b>Routes</b>
+    </h5>
+    <small style="color: #939393;">Select to update curl</small>
+    <h6><span class="badge bg-primary">POST</span> /Post/save</h6>
+    <h6><span class="badge bg-primary">POST</span> /Post/update</h6>
+    <h6><span class="badge bg-primary">POST</span> /Post/list</h6>
+    <h6><span class="badge bg-primary">POST</span> /Post/list/:id</h6>
+    <h6><span class="badge bg-primary">POST</span> /Post/delete</h6>
+</section>
+<section class="col col-sm-6">
+    <h5>
+        <b>Curl Request</b>
+    </h5>
+    <span class="badge bg-light text-dark populateModal" data-entidade="Post" data-bs-toggle="modal" data-values="PATH_ROUTE,JWT,Img,Description,Author," data-bs-target="#insertData" style="float: right; margin-top: -30px;">Edit</span>
+
+    <pre><code id="codeCurl">curl --request POST \ 
+--url http://localhost:5000/Post/<span style="color: red">&lt;PATH_ROUTE&gt;</span> \ 
+--header 'Authorization: <span style="color: red">&lt;JWT&gt;</span>' \ 
+--header 'Content-Type: multipart/form-data;' \ <br>--form 'Img=<span style="color: red">&lt;Img&gt;</span>' \ <br>--form 'Description=<span style="color: red">&lt;Description&gt;</span>' \ <br>--form 'Author=<span style="color: red">&lt;Author&gt;</span>' \ <br></code></pre>
+</section>
+</div>
+</li>
+        </ul>
+    </div>
+</div>
+<!-------------------
+
+
+FIM ENTIDADES
+
+
+-->
+
+        </section>
+
+        <footer style="
+        width: 100%;
+        padding: 100px 0px;
+        text-align: center;
+        color: #a4a4a4;">
+            Made with <b>Lewix Generator</b>
+        </footer>
+        
+        <!-- Modal -->
+        <div class="modal fade" id="insertData" tabindex="-1" aria-labelledby="insertDataLabel" aria-hidden="true">
+            <input type="hidden" class="entidadeAtual">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="insertDataLabel">Input data</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" id="inputsCurl">
+                        ...
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary submit">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <script>
+            
+            var inputsCurl = document.querySelector("#inputsCurl");
+            
+            function populateModalF(dataset){
+                var Values = dataset.values.split(',');
+                inputsCurl.innerHTML = "";
+                Values.forEach(element => {
+                    if(element)
+                    inputsCurl.innerHTML += `<div class="input-group mb-3">
+                        <span class="input-group-text">${element}</span>
+                        <input type="text" class="form-control getInputValues" name="${element}" aria-label="${element}">
+                        </div>`;
+                });
+                document.querySelector(".entidadeAtual").value = dataset.entidade
+            }
+            var curlOrigin = "";
+            function updateCurl() {
+                var values   = document.querySelectorAll("#insertData .getInputValues");
+                var codeCurl = document.querySelector(`#${document.querySelector(".entidadeAtual").value} code`);
+                if(!curlOrigin)
+                curlOrigin = codeCurl.innerText;
+                var repliced = curlOrigin;
+                values.forEach(element => {
+                    repliced = repliced.replace("<" + element.name + ">", element.value)
+                });
+                codeCurl.innerHTML = repliced;
+            }
+    
+    
+            document
+            .querySelectorAll('.populateModal')
+            .forEach( element => {
+                element.addEventListener("click", e => populateModalF(e.target.dataset))
+            });
+    
+            document.querySelector('#insertData .submit')
+            .addEventListener("click", e => updateCurl(e.target.dataset))
+
+            document.querySelector("#search").addEventListener("change", () => {
+                document.querySelectorAll(".list-group-item").forEach(el => {
+                    search = document.querySelector("#search").value
+                    if(!el.innerText.includes(search))
+                    el.style.display = 'none'
+                    else
+                    el.style.display = 'block'
+                })
+            })
+    
+        </script>
+        <!--Bootstrap Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+        </body>
+    </html>    
