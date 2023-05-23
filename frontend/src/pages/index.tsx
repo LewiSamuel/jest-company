@@ -1,42 +1,40 @@
 import Head from 'next/head';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { Col, Container, Row } from 'react-bootstrap';
+import CardPost from '../components/Card';
+import NavBar from '../components/Navbar';
 import JestCompany from '../JestCompany';
 
 export default function Home() {
 
   /**
-   *  Importa entidade Usuário do Framework Project
+   *  Importa entidade do Framework Project
    */
-  const User = JestCompany.User;
+  const [Posts, setPosts] = useState([]);
 
   useEffect(() => {
 
-    /**
-     *  Ao carregar página
-     *  chama metodo AUTH da entidade Usuário
-     * Debuga resultado da API no console
-     */
-    
-    User
-    .auth({Email: 'teste@gmail.com', Password: '123123'})
-    .then(console.log);
-
-    User
-    .save({
-            Name:"TESTE USER",
-            Email:"teste@gmail.com",
-            Password:"123123"})
-    .then(console.log)
-
+    JestCompany
+    .Post
+    .list({})
+    .then(result => setPosts(result.data))
 
   },[])
 
   return (
     <>
       <Head>
-        <title>undefined</title>
+        <title>Jest Company</title>
       </Head>
-      <h1>Make a promise here</h1>
+      <NavBar />
+      <Container>
+        <Row 
+        className='justify-content-center ' >
+          <Col sm={12} md={8} lg={6} >
+            {Posts.map((post:any) => <CardPost key={post.id} obj={post} />)}
+          </Col>
+        </Row>
+      </Container>
     </>
   );
 }

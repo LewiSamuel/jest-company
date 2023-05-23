@@ -9,7 +9,6 @@ const routes = Router();
  */
 import AuthToken from '../middleware/security/AuthToken';
 
-
 /**
  *  Entities Relations
  */
@@ -47,7 +46,7 @@ import PostDeleteMid      from '../middleware/Post/Delete';
  *     SERVICES POST
  * 
  */
-routes.post("/save",           [ AuthToken , PostSaveMid ],       PostSaveController);
+routes.post("/save",           [ AuthToken, PostSaveMid ],       PostSaveController);
 routes.put("/update",          [ AuthToken, PostUpdateMid ],     PostUpdateController);
 routes.patch("/update/:field", [ AuthToken, PostUpdateOneMid ],  PostUpdateOneController);
 routes.get("/list",            [ AuthToken, PostListMid ],       PostListController);

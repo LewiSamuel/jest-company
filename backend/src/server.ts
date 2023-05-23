@@ -5,7 +5,6 @@ import path from 'path';
 import express from 'express';
 import formidableMiddleware from 'express-formidable';
 import cors from 'cors';
-
 /**
 * Routes
 */
@@ -20,12 +19,12 @@ const app = express();
 * FAVICON
 */
 app.use('/favicon.ico', express.static('public/favicon.png'));
+app.use('/v1/post/img', express.static('public/post/img'));
 
 /**
 * Habilita a todas rotas receber requisições de todas as origens 
 */
 app.use(cors());
-
 /**
 * Implementa toda comunicação recebida em JSON
 * Captura informações passadas via FormData

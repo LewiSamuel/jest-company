@@ -22,7 +22,7 @@ routes.get("/", (req, res) =>  res.send("💻 Jest Company - API ❤️"));
 /**
 * SWAGGER ROUTER
 */
-routes.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+routes.use('/swagger', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 /**
 * User routes

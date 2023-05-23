@@ -5,7 +5,7 @@ services:
   front-end:
     build: 
       context: ./
-      dockerfile: ./frontend/docker/Dockerfile
+      dockerfile: ./frontend/DockerFile
     command: npm run dev
     ports:
       - "3000:3000"
@@ -15,7 +15,7 @@ services:
   back-end:
     build: 
       context: ./
-      dockerfile: ./backend/docker/Dockerfile
+      dockerfile: ./backend/DockerFile
     command: npm run dev
     ports:
       - "5000:5000"

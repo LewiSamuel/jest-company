@@ -8,6 +8,7 @@ import { save, listOne } from "../../middleware/pattern/dbMethods";
 
 export default async (req, res) => { 
 
+  console.log(req.fields)
   
 // save
 await save( Post, req.fields )

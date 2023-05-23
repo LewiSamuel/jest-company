@@ -21,7 +21,7 @@ export default async (req, res) => {
       /**
        * Build response not found
        */
-      let objResponse = patternReponse(API_RESPONSE_STATUS['error'], "USER LIST ONE NOT FOUND", result);
+      let objResponse = patternReponse(API_RESPONSE_STATUS['error'], "USER LIST ONE NOT FOUND", null);
       return res.send(objResponse);
     }
 
