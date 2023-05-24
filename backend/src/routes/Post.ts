@@ -49,7 +49,7 @@ import PostDeleteMid      from '../middleware/Post/Delete';
 routes.post("/save",           [ AuthToken, PostSaveMid ],       PostSaveController);
 routes.put("/update",          [ AuthToken, PostUpdateMid ],     PostUpdateController);
 routes.patch("/update/:field", [ AuthToken, PostUpdateOneMid ],  PostUpdateOneController);
-routes.get("/list",            [ AuthToken, PostListMid ],       PostListController);
+routes.get("/list",            [ PostListMid ],       PostListController);
 routes.get("/list/:id",        [ AuthToken, PostListOneMid ],    PostListOneController);
 routes.delete("/delete",       [ AuthToken, PostDeleteMid ],     PostDeleteController);
 

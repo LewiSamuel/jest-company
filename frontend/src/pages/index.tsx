@@ -31,7 +31,7 @@ export default function Home() {
         <Row 
         className='justify-content-center ' >
           <Col sm={12} md={8} lg={6} >
-            {Posts.map((post:any) => <CardPost key={post.id} obj={post} />)}
+            {Posts?.map((post:any) => <CardPost key={post.id} obj={post} />)}
           </Col>
         </Row>
       </Container>

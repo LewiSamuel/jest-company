@@ -10,7 +10,7 @@ WORKDIR /usr/app/frontend/
 
 # Copia o package.json e o package-lock.json para
 # dentro da maquina e executa o npm install
-COPY /frontend /usr/app/frontend/
+COPY ./ /usr/app/frontend/
 RUN npm install
 
 # Copia todos os arquivos para o diretorio principal
@@ -24,6 +24,6 @@ EXPOSE 3000
 CMD ["npm", "run", "dev"]
 
 # COMANDO PARA CRIAR A IMAGEM:
-# "docker build -t <user/image> <onde esta o dockerfile>"
+# "docker build -t lewix/jestfrontend ."
 # COMANDO PARA RODAR A IMAGEM:
-# "docker run -p <porta final>:<porta dentro do container> -d <nome da imagem>"
+# "docker run -p 3000:3000 -d lewix/jestfrontend"

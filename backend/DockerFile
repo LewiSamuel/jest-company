@@ -24,6 +24,6 @@ EXPOSE 5000
 CMD ["npm", "run", "dev"]
 
 # COMANDO PARA CRIAR A IMAGEM:
-# "docker build -t <user/image> <onde esta o dockerfile>"
+# "docker build -t lewix/jestbackend ."
 # COMANDO PARA RODAR A IMAGEM:
-# "docker run -p <porta final>:<porta dentro do container> -d <nome da imagem>"
+# "docker run -p 5000:5000 -d lewix/jestbackend"

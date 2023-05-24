@@ -35,7 +35,7 @@ export default async (req, res) => {
     /**
      * Build response error
      */
-    let objResponse = patternReponse(API_RESPONSE_STATUS['error'], "POST LIST ERROR", err);
+    let objResponse = patternReponse(API_RESPONSE_STATUS['error'], "POST LIST ERROR", []);
     return res.send(objResponse);
 
   });
