@@ -3,7 +3,7 @@
 */
 import Post from "../../model/Post";
 import { API_RESPONSE_STATUS, patternReponse } from "../../middleware/pattern/apiResponse";
-import { update, listOne } from "../../middleware/pattern/dbMethods";
+import { update } from "../../middleware/pattern/dbMethods";
 
 
 export default async (req, res) => {

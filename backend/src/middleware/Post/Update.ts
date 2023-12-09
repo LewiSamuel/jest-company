@@ -7,7 +7,6 @@
 import { API_RESPONSE_STATUS, patternReponse } from "../pattern/apiResponse";
 import { listOne } from "../pattern/dbMethods";
 import User from "../../model/User";
-import Post from "../../model/Post";
 
 
 export default async (req, res, next) => {

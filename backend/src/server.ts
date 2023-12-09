@@ -1,7 +1,6 @@
 /**
 * import modules
 */
-import path from 'path';
 import express from 'express';
 import formidableMiddleware from 'express-formidable';
 import cors from 'cors';

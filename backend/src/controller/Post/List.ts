@@ -13,13 +13,13 @@ export default async (req, res) => {
       /**
        *  ANALIZING ALL REGISTERS
        */
-      for (let i = 0; i < result.length; i++){
-        let element = result[i];
-        
+      // for (let i = 0; i < result.length; i++){
+      //   let element = result[i];
+      for(const [index, element] of result){
         // ADD RELATION
         // Author
         let objAuthor:any = await listOne(User, { id: element.Author });
-        result[i].dataValues.Author = objAuthor.dataValues;
+        result[index].dataValues.Author = objAuthor.dataValues;
         
       }
       

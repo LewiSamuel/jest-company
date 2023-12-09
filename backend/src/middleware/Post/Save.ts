@@ -5,8 +5,6 @@
  * 
  */
 import { API_RESPONSE_STATUS, patternReponse } from "../pattern/apiResponse";
-import { listOne } from "../pattern/dbMethods";
-import User from "../../model/User";
 import fs from 'fs';
 
 export default async (req, res, next) => {
@@ -54,7 +52,7 @@ export default async (req, res, next) => {
 
   fs.readFile(req.files.Img.path, function (err, data) {
 
-    var imageName = req.files.Img.name
+    let imageName = req.files.Img.name
 
     /// If there's an error
     if (!imageName) {
@@ -64,7 +62,7 @@ export default async (req, res, next) => {
 
     } else {
 
-      var newPath = "./public/post/img/" + new Date().getTime() + "." + imageName.split(".")[1];
+      let newPath = "./public/post/img/" + new Date().getTime() + "." + imageName.split(".")[1];
 
       /// write file to uploads/fullsize folder
       fs.writeFile(newPath, data, function (err) {

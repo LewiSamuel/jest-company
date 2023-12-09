@@ -5,9 +5,7 @@
 * 
 */
 import { API_RESPONSE_STATUS, patternReponse } from "../pattern/apiResponse";
-import User from "../../model/User";
-import { Op } from "sequelize";
-  
+
 export default async (req, res, next) => {
   const { id } = req.fields;
 

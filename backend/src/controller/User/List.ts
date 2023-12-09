@@ -3,7 +3,7 @@
 */
 import User from "../../model/User";
 import { API_RESPONSE_STATUS, patternReponse } from "../../middleware/pattern/apiResponse";
-import { list, listOne } from "../../middleware/pattern/dbMethods";
+import { list } from "../../middleware/pattern/dbMethods";
 export default async (req, res) => { 
 
   await list( User, req.fields )
